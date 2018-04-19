@@ -113,8 +113,8 @@ private[spark] class TaskFailedListener extends SparkListener {
   override def onTaskEnd(taskEnd: SparkListenerTaskEnd): Unit = {
     taskEnd.reason match {
       case reason: TaskFailedReason =>
-        throw new InterruptedException(s"ExecutorLost during XGBoost Training: " +
-          s"${reason.toErrorString}")
+        // throw new InterruptedException(s"ExecutorLost during XGBoost Training: " +
+          // s"${reason.toErrorString}")
       case _ =>
     }
   }
